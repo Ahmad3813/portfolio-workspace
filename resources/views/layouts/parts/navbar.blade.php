@@ -1,4 +1,12 @@
 <!-- Navbar -->
+ @php
+    $pageName = match (true) {
+        request()->routeIs('contact.*') => 'Contact',
+        request()->routeIs('skill.*') => 'Skills',
+        request()->routeIs('blog.*') => 'Blogs',
+        default => 'Dashboard',
+    };
+@endphp
 <header class="navbar">
     <div class="navbar-left">
         <button class="menu-button" id="open-menu" type="button">
@@ -8,7 +16,7 @@
         <div class="breadcrumb">
             <span>Workspace</span>
             <b>/</b>
-            <strong>Dashboard</strong>
+            <strong>{{ $pageName }}</strong>
         </div>
     </div>
     <form action="{{ route('logout') }}" method="POST">
