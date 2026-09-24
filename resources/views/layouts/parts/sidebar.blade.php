@@ -63,7 +63,7 @@
             <span class="card-star">✦</span>
             <h3>A little progress,<br>every day.</h3>
             <p>Your next chapter starts with what you build today.</p>
-            <a href="/">View portfolio ↗</a>
+            <a>View portfolio ↗</a>
         </div>
 
         <div class="user-profile">
