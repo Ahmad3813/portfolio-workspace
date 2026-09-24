@@ -38,18 +38,16 @@
         <td>{{$contact->location}}</td>
 
         <td>
-<div class="row-actions">
-    <a href="{{ route('contact.view', $contact->id) }}" type="button" class="show-button">View</a>
-    <a href="{{ route('contact.edit', $contact->id) }}" type="button" class="edit-button">Edit</a>
+                <div class="row-actions">
+                 <a href="{{ route('contact.view', $contact->id) }}" type="button" class="show-button">View</a>
+                 <a href="{{ route('contact.edit', $contact->id) }}" type="button" class="edit-button">Edit</a>
 
-    <form action="{{ route('deletecontact', $contact->id) }}" method="POST">
-    @csrf
-    @method('DELETE')
+                <form action="{{ route('deletecontact', $contact->id) }}" method="POST">
+                 @csrf
+                 @method('DELETE')
 
-    <button type="submit" class="delete-button">
-        Delete
-    </button>
-</form>
+                     <button type="submit" class="delete-button"> Delete </button>
+                </form>
 </div>
         </td>
     </tr>
