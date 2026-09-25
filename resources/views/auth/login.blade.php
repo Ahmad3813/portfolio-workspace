@@ -57,7 +57,7 @@
                     <div class="login-form-row">
                         <div class="login-password-label">
                             <label for="password">Password</label>
-                            <a href="#" class="forgot-password">Forgot password?</a>
+                            <a href="{{ route('password.request') }}" class="forgot-password">Forgot password?</a>
                         </div>
 
                         <input

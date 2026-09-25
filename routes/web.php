@@ -53,17 +53,28 @@ Route::get('/skill.add', [SkillController::class, 'create'])->name('skill.add');
 
 Route::post('/storeskill', [SkillController::class, 'store'])->name('storeskill');
 
-Route::get('/viewskill/{skill}', [SkillController::class,'show'])->name('viewskill');
+Route::get('/viewskill/{skill}', [SkillController::class, 'show'])->name('viewskill');
 
 Route::get('/editskill/{skill}', [SkillController::class, 'edit'])->name('editskill');
 
 Route::put('/updateskill/{skill}', [SkillController::class, 'update'])->name('updateskill');
 
-Route::delete('deleteskill/{skill}', [SkillController::class,'destroy' ])->name('deleteskill');
+Route::delete('deleteskill/{skill}', [SkillController::class, 'destroy'])->name('deleteskill');
 
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 
-Route::post('login', [LoginController::class,'login'])->name('login.submit');
+Route::post('login', [LoginController::class, 'login'])->name('login.submit');
 
-Route::post('logout', [LoginController::class,'logout'])->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/forgot-password', [LoginController::class, 'showForgotPassword'])->name('password.request');
+
+Route::post('/forgot-password', [LoginController::class, 'sendOtp'])->name('password.email');
+
+Route::get('/verify-otp', [LoginController::class, 'showOtpForm'])->name('password.otp.form');
+
+Route::post('/verify-otp', [LoginController::class, 'verifyOtp'])->name('password.otp.verify');
+
+Route::get('/reset-password', [LoginController::class, 'showResetPassword'])->name('password.reset.form');
+
+Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name('password.reset');
